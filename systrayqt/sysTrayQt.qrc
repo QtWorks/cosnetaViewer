@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/cosneta-logo.png</file>
+        <file>images/cosneta_logo_vector.svg</file>
+        <file>images/cosneta_logo_vector_bw.svg</file>
+        <file>images/freerunner_drawing.png</file>
+    </qresource>
+</RCC>

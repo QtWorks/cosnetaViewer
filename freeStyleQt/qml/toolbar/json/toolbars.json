@@ -1,0 +1,28 @@
+{
+    "modes": [
+        {
+            "name": "viewMode",
+            "icon": "qrc:/icons/view_mode.svg"
+        },
+        {
+            "name": "privateNotesMode",
+            "icon": "qrc:/icons/personal_notes.svg",
+            "menuUrl": "qrc:/qml/toolbar/qml/submenus/PublicAnnotationWidget.qml"
+        },
+        {
+            "name": "publicAnnotationMode",
+            "icon": "qrc:/icons/annotate_mode.svg",
+            "menuUrl": "qrc:/qml/toolbar/qml/submenus/PublicAnnotationWidget.qml"
+        },
+        {
+            "name": "presentationMode",
+            "icon": "qrc:/icons/Presentation.svg",
+            "menuUrl": "qrc:/qml/toolbar/qml/submenus/PresentationModeWidget.qml"
+        },
+        {
+            "name": "mouseMode",
+            "icon": "qrc:/icons/mouse_mode.svg",
+            "menuUrl": "qrc:/qml/toolbar/qml/submenus/MouseModeWidget.qml"
+        }
+    ]
+}

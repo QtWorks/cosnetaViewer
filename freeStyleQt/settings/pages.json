@@ -1,0 +1,19 @@
+[
+    {
+        "name": "splash",
+        "url": "qrc:/qml/pages/splash/SplashPage.qml"
+    },
+    {
+        "name": "login",
+        "url": "qrc:/qml/pages/login/LoginPage.qml"
+    },
+    {
+        "name": "main",
+        "url": "qrc:/qml/pages/main/mainPage.qml"
+    },
+    {
+        "name": "thankyou",
+        "url": "qrc:/qml/pages/thankyou/ThankYouPage.qml"
+    }
+]
+

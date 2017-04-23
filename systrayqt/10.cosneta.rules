@@ -1,0 +1,1 @@
+SUBSYSTEM=="block", ATTRS{vendor}=="COSNETA ", NAME="freerunner", MODE="0777"
