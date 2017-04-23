@@ -12,18 +12,11 @@ PageBase {
         id: pageContents
         anchors.fill: parent
 
-        StandardText {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 8
-            font.pixelSize: 64
-            text: "Welcome to Cosneta"
-        }
-
         Image {
             anchors.fill: parent
+            anchors.margins: 8
             fillMode: Image.PreserveAspectFit
-            source: "qrc:/background/freestyle_logo.png"
+            source: "qrc:/background/cosneta_logo.png"
         }
     }
 

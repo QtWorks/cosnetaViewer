@@ -130,9 +130,10 @@
         <file>qml/toolbar/qml/submenus/PresentationModeWidget.qml</file>
         <file>qml/toolbar/qml/submenus/PublicAnnotationWidget.qml</file>
         <file>qml/toolbar/qml/ToolBarButtonDelegate.qml</file>
-        <file>qml/toolbar/qml/ToolBarButton.qml</file>
-        <file>qml/toolbar/qml/ToolBarRadioButton.qml</file>
         <file>qml/toolbar/qml/ToolBarRadioButtonDelegate.qml</file>
         <file>qml/pages/main/mainPage.qml</file>
+        <file>background/cosneta_logo.png</file>
+        <file>qml/ToolBarButton.qml</file>
+        <file>qml/ToolBarRadioButton.qml</file>
     </qresource>
 </RCC>

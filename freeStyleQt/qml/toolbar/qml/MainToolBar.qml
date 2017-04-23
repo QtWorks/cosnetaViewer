@@ -2,11 +2,10 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.3
 import "../.."
 
-Rectangle {
+Item {
     id: root
     width: Theme.toolbarItemSize*10
     height: Theme.toolbarItemSize
-    color: Theme.toolbarBackgroundColor
 
     // Current mode
     property string currentMode: "viewMode"

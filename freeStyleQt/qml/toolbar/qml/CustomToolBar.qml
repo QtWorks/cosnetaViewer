@@ -1,12 +1,11 @@
 import QtQuick 2.5
 import "../.."
 
-Rectangle {
+Item {
     id: root
     width: model.length*Theme.toolbarItemSize+(model.length-1)*Theme.toolbarItemSpacing
     height: Theme.toolbarItemSize
     anchors.verticalCenter: parent.verticalCenter
-    color: Theme.toolbarBackgroundColor
     property alias model: listView.model
     signal toolBarItemClicked(variant modeData)
 

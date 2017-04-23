@@ -40,8 +40,8 @@ Item {
 
     // Dynamic toolbar
     readonly property int toolbarItemSpacing: 8
-    readonly property int toolbarItemSize: 64
-    readonly property color toolbarBackgroundColor: "white"
+    readonly property int toolbarItemSize: 48
+    readonly property color toolbarBackgroundColor: "lightgray"
     readonly property int leftWingAnimationDuration: 1500
     readonly property color buttonHighlightBorderColor: "orange"
     readonly property color buttonHighlightColor: "lightgray"
