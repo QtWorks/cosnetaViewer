@@ -9,20 +9,22 @@ Item {
     property bool borderVisible: false
     signal buttonClicked()
 
+    // Show background
     onSourceChanged: {
-        if (borderVisible) {
-            toto.stop()
-            toto.start()
+        if (borderVisible && (menuDisplay.state === "")) {
+            borderAnim.stop()
+            borderAnim.start()
         }
     }
 
+    // Background
     Rectangle {
         anchors.fill: parent
         color: "orange"
         visible: borderVisible
         SequentialAnimation on opacity {
-            id: toto
-            loops: 3 // The animation is set to loop indefinitely
+            id: borderAnim
+            loops: 3
             NumberAnimation { from: 0; to: 1; duration: 500}
             NumberAnimation { from: 1; to: 0; duration: 500}
         }

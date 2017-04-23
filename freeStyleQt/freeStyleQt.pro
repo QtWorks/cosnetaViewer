@@ -5,22 +5,19 @@
 #-------------------------------------------------
 
 QT += core gui qml quick quickwidgets svg network widgets printsupport
-android:QT += androidextras
+android: QT += androidextras
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TEMPLATE = app
-INCLUDEPATH += $$PWD/../cosnetaapi
-!android:!ios:DEPENDPATH += $$PWD/../cosnetaapi
-
-win32:CONFIG(release, debug|release):    LIBS += -L$$PWD/../bin -lcosnetaAPI
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../bin -lcosnetaAPId
-else:macx:                               LIBS += -L$$PWD/../builds/cosnetaAPI/ -lcosnetaAPI
-else:unix:!android:!ios:                 LIBS += -L$$PWD/../builds/cosnetaAPI-Release/ -lcosnetaAPI
+INCLUDEPATH += $$PWD/../cosnetaapi ../servermanager
+!android:!ios:DEPENDPATH += $$PWD/../cosnetaapi ../servermanager
 
 CONFIG(debug, debug|release) {
+    LIBS += -L$$PWD/../bin -lcosnetaAPId -lservermgrd
     TARGET = freestyleqtd
 } else {
+    LIBS += -L$$PWD/../bin -lcosnetaAPI -lservermgr
     TARGET = freestyleqt
 }
 
@@ -54,15 +51,13 @@ HEADERS += \
     freestyleqt.h \
     iservice.h \
     baseview.h \
-    csingleton.h \
-    servermanager.h
+    csingleton.h
 
 SOURCES += \
     controller.cpp \
     freestyleqt.cpp \
     main.cpp \
-    baseview.cpp \
-    servermanager.cpp
+    baseview.cpp
 
 RESOURCES += \
     resources.qrc

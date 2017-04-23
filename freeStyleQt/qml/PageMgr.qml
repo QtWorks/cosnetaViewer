@@ -24,7 +24,6 @@ StackView {
     // Initialize
     function initialize()
     {
-        console.log("ICI: ", gPageSettings)
         if (gPageSettings.length > 0)
             loadPage(gPageSettings[0].name)
     }

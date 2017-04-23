@@ -9,6 +9,7 @@
 // Application
 #include "../systrayqt/net_connections.h"
 #include "iservice.h"
+#include "servermanager_global.h"
 
 // Describe a single server entry
 typedef struct server_s
@@ -19,7 +20,7 @@ typedef struct server_s
 }
 serverEntry_t;
 
-class ServerManager : public QObject, public IService
+class SERVERMANAGERSHARED_EXPORT ServerManager : public QObject, public IService
 {
     Q_OBJECT
     Q_PROPERTY(int serverCount READ serverCount NOTIFY serverCountChanged)

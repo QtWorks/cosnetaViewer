@@ -3,7 +3,7 @@
 
 // Application
 #include "controller.h"
-#include "servermanager.h"
+#include <servermanager.h>
 
 // Constructor
 Controller::Controller(QObject *parent) : QObject(parent),

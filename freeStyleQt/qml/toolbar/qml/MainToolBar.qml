@@ -41,7 +41,6 @@ Item {
         onToolBarItemClicked: {
             console.log("SETTING MODE TO ", modeName)
             root.setCurrentMode(modeName)
-            menuDisplay.state = ""
         }
     }
 

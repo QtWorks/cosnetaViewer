@@ -35,14 +35,17 @@ PageBase {
             anchors.top: parent.top
         }
 
-        // Tap to open menu
+        /*
+        // Back button
         ToolBarButton {
             anchors.left: parent.left
             anchors.leftMargin: 8
             anchors.top: parent.top
             anchors.topMargin: 8
-            source: "qrc:/qml/toolbar/icons/tap_to_open.svg"
+            source: "qrc:/icons/previous_page.svg"
+            onButtonClicked: loadPreviousPage()
         }
+        */
     }
 
     // Initialize
