@@ -135,5 +135,6 @@
         <file>background/cosneta_logo.png</file>
         <file>qml/ToolBarButton.qml</file>
         <file>qml/ToolBarRadioButton.qml</file>
+        <file>qml/toolbar/icons/arrow_down.svg</file>
     </qresource>
 </RCC>

@@ -41,6 +41,7 @@ Item {
         onToolBarItemClicked: {
             console.log("SETTING MODE TO ", modeName)
             root.setCurrentMode(modeName)
+            menuDisplay.state = ""
         }
     }
 
@@ -62,7 +63,6 @@ Item {
         onCloseMenu: leftWing.state = ""
         onHideSubMenu: menuDisplay.state = ""
         onToolBarItemClicked: {
-            console.log("TOTO: ", modeData.name)
             if (modeData.name !== "grab") {
                 if (menuDisplay.state === "")
                     menuDisplay.state = "on"

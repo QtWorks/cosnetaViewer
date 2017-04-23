@@ -91,6 +91,7 @@ Flow {
         modeData: {"name": "modeOptions", "icon": "qrc:/qml/toolbar/icons/question.svg"}
         onToolBarItemClicked: root.toolBarItemClicked(modeData)
         visible: currentModeHasOptions
+        borderVisible: true
     }
 
     // Camera button
