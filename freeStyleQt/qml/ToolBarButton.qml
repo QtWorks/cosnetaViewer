@@ -4,9 +4,10 @@ import "."
 Item {
     id: root
     width: Theme.toolbarItemSize
-    height: Theme.toolbarItemSize
+    height: Theme.toolbarItemSize + (labelContainer.visible ? Theme.buttonLabelHeight : 0)
     property alias source: image.source
     property bool borderVisible: false
+    property string label: ""
     signal buttonClicked()
 
     // Show background
@@ -30,12 +31,13 @@ Item {
         }
     }
 
+    // Image
     Image {
         id: image
         smooth: true
         antialiasing: true
-        sourceSize.width: root.width
-        sourceSize.height: root.height
+        sourceSize.width: Theme.toolbarItemSize
+        sourceSize.height: Theme.toolbarItemSize
         MouseArea {
             id: mouseArea
             anchors.fill: parent
@@ -48,6 +50,25 @@ Item {
                 target: image
                 scale: .9
             }
+        }
+    }
+
+    // Label area
+    Item {
+        id: labelContainer
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: Theme.buttonLabelHeight
+        visible: root.label.length > 0
+
+        // Label
+        StandardText {
+            id: label
+            height: parent.height
+            anchors.centerIn: parent
+            font.pixelSize: Theme.buttonLabelPixelSize
+            text: root.label
+            color: "black"
         }
     }
 }

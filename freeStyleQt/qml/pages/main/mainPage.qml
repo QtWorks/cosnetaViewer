@@ -24,29 +24,6 @@ PageBase {
     // Page contents
     pageContents: Item {
         anchors.fill: parent
-
-        /*
-        // Background
-        Rectangle {
-            id: toolBarBackground
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: mainToolBar.height
-            color: Theme.toolbarBackgroundColor
-        }
-        */
-
-        /*
-        // Back button
-        ToolBarButton {
-            anchors.left: parent.left
-            anchors.leftMargin: 8
-            anchors.top: parent.top
-            anchors.topMargin: 8
-            source: "qrc:/icons/previous_page.svg"
-            onButtonClicked: loadPreviousPage()
-        }
-        */
     }
 
     // Initialize

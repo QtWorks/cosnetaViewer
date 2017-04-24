@@ -128,7 +128,7 @@ PageBase {
                     text: Theme.connect
                     onClicked: {
                         loadNextPage()
-                        controller.serverManager.remoteConnect()
+                        //controller.serverManager.remoteConnect()
                     }
                 }
             }

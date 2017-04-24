@@ -14,7 +14,7 @@ TEMPLATE = lib
 CONFIG(debug, debug|release) {
     TARGET = servermgrd
 } else {
-    TARGET = servermgrd
+    TARGET = servermgr
 }
 
 unix {

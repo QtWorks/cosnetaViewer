@@ -29,11 +29,11 @@ Item {
 
     // Header
     readonly property int headerHeight: 52
-    readonly property color headerColor: "lightgray"
+    readonly property color headerColor: "#AAAAAA"
 
     // Footer
     readonly property int footerHeight: 52
-    readonly property color footerColor: "lightgray"
+    readonly property color footerColor: "#AAAAAA"
 
     // Splash page
     readonly property int splashTimerDuration: 2000
@@ -44,7 +44,7 @@ Item {
     readonly property color toolbarBackgroundColor: headerColor
     readonly property int leftWingAnimationDuration: 1500
     readonly property color buttonHighlightBorderColor: "orange"
-    readonly property color buttonHighlightColor: "lightgray"
+    readonly property color buttonHighlightColor: "#AAAAAA"
     readonly property string publicAnnotationTab1Title: qsTr("Pen")
     readonly property string publicAnnotationTab2Title: qsTr("Undo")
     readonly property string publicAnnotationTab3Title: qsTr("Page")
@@ -52,4 +52,11 @@ Item {
     readonly property int menuDisplayOpacityAnimationDuration: 250
     readonly property int radioButtonScaleAnimationDuration: 250
     readonly property int standardTabHeight: toolbarItemSize*3/4
+
+    // Widget background color
+    readonly property color widgetBackgroundColor: headerColor
+
+    // Button label height
+    readonly property int buttonLabelHeight: 16
+    readonly property int buttonLabelPixelSize: 12
 }

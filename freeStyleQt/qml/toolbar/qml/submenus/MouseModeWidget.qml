@@ -2,7 +2,7 @@ import QtQuick 2.5
 import "../../.."
 
 Rectangle {
-    color: "transparent"
+    color: Theme.widgetBackgroundColor
     border.color: "black"
     anchors.fill: parent
     Row {
@@ -13,6 +13,7 @@ Rectangle {
             ToolBarButton {
                 source: "qrc:/qml/toolbar/icons/left_mouse_click.svg"
                 anchors.centerIn: parent
+                label: qsTr("Left Click")
             }
         }
         Item {
@@ -21,6 +22,7 @@ Rectangle {
             ToolBarButton {
                 source: "qrc:/qml/toolbar/icons/right_mouse_click.svg"
                 anchors.centerIn: parent
+                label: qsTr("Right Click")
             }
         }
         Item {
@@ -29,6 +31,7 @@ Rectangle {
             ToolBarButton {
                 source: "qrc:/qml/toolbar/icons/text_entry.svg"
                 anchors.centerIn: parent
+                label: qsTr("Enter Text")
             }
         }
     }

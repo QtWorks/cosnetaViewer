@@ -5,10 +5,10 @@ Rectangle {
     id: root
     color: "transparent"
     width: Theme.toolbarItemSize
-    height: Theme.toolbarItemSize
+    height: Theme.toolbarItemSize + (labelContainer.visible ? Theme.buttonLabelHeight : 0)
     border.width: 3
     border.color: "transparent"
-
+    property string label: ""
     property alias source: image.source
     signal buttonClicked()
 
@@ -25,6 +25,25 @@ Rectangle {
         }
         Behavior on scale {
             NumberAnimation {duration: Theme.radioButtonScaleAnimationDuration}
+        }
+    }
+
+    // Label area
+    Item {
+        id: labelContainer
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: Theme.buttonLabelHeight
+        visible: root.label.length > 0
+
+        // Label
+        StandardText {
+            id: label
+            height: parent.height
+            anchors.centerIn: parent
+            font.pixelSize: Theme.buttonLabelPixelSize
+            text: root.label
+            color: "black"
         }
     }
 

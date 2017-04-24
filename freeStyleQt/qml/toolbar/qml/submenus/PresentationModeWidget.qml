@@ -2,7 +2,7 @@ import QtQuick 2.5
 import "../../.."
 
 Rectangle {
-    color: "transparent"
+    color: Theme.widgetBackgroundColor
     border.color: "black"
     anchors.fill: parent
     Column {
@@ -18,6 +18,7 @@ Rectangle {
                     ToolBarButton {
                         source: "qrc:/qml/toolbar/icons/previous_slide.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Prev Slide")
                     }
                 }
                 Item {
@@ -26,6 +27,7 @@ Rectangle {
                     ToolBarButton {
                         source: "qrc:/qml/toolbar/icons/next_slide.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Next Slide")
                     }
                 }
                 Item {
@@ -34,6 +36,7 @@ Rectangle {
                     ToolBarButton {
                         source: "qrc:/qml/toolbar/icons/laser_pointer.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Laser Pointer")
                     }
                 }
             }
@@ -49,6 +52,7 @@ Rectangle {
                     ToolBarButton {
                         source: "qrc:/qml/toolbar/icons/start_presentation.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Start Pres")
                     }
                 }
                 Item {
@@ -57,14 +61,16 @@ Rectangle {
                     ToolBarButton {
                         source: "qrc:/qml/toolbar/icons/stop_presentation.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Stop Pres")
                     }
                 }
                 Item {
                     width: parent.width/3
                     height: parent.height
                     ToolBarButton {
-                        source: "qrc:/qml/toolbar/icons/start_presentation_2.svg"
+                        source: "qrc:/qml/toolbar/icons/start_presentation.svg"
                         anchors.centerIn: parent
+                        label: qsTr("Start Pres2")
                     }
                 }
             }
