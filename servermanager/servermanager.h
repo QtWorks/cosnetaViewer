@@ -36,6 +36,9 @@ public:
     // Shutdown
     virtual void shutdown();
 
+    // Remote connect
+    Q_INVOKABLE void remoteConnect(int iServerIndex);
+
 private:
     // Initialize data packets
     void initializeDataPackets();
@@ -64,6 +67,18 @@ private:
 
     // Found server list
     QVector<serverEntry_t> m_vFoundServerList;
+
+    // Host address
+    QHostAddress m_hHostAddress;
+
+    // Host port number
+    int m_iHostPortNumber;
+
+    // Host view address
+    QHostAddress m_hHostViewAddress;
+
+    // Host view port number
+    int m_iHostViewPortNumber;
 
     // Manual config?
     bool m_bManualConfig;

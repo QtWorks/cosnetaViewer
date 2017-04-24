@@ -126,7 +126,10 @@ PageBase {
                     anchors.rightMargin: Theme.pageHorizontalPadding/2
                     height: parent.height
                     text: Theme.connect
-                    onClicked: loadNextPage()
+                    onClicked: {
+                        loadNextPage()
+                        controller.serverManager.remoteConnect()
+                    }
                 }
             }
 

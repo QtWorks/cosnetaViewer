@@ -4,8 +4,10 @@
 #
 #-------------------------------------------------
 
-QT += core network
-INCLUDEPATH += $$PWD/../freeStyleQt
+QT += core network gui widgets
+android: QT += androidextras
+INCLUDEPATH += $$PWD/../freeStyleQt ../cosnetaapi
+
 DEFINES += SERVERMANAGER_LIBRARY
 TEMPLATE = lib
 

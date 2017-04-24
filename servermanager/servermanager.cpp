@@ -6,10 +6,13 @@
 #define TIME_OUT 20
 #define BROADCAST_PORT 14755
 #define RADAR_SOCKET_PORT 14759
+#define REMOTE_CONNECT_PORT 14753
+#define MANUAL_REMOTE_DATA "Manual Remote Data"
 
 // Constructor
 ServerManager::ServerManager(QObject *parent) : QObject(parent),
-    m_bManualConfig(false), m_bLookingForHost(true)
+    m_bManualConfig(false), m_bLookingForHost(true), m_iHostPortNumber(0),
+    m_iHostViewPortNumber(0)
 {
     // Initialize data packets
     initializeDataPackets();
@@ -62,7 +65,7 @@ QStringList ServerManager::serverNames() const
         foreach (serverEntry_t sEntry, m_vFoundServerList)
             lServerNames << sEntry.serverName;
     }
-    lServerNames << "Manual Remote Data";
+    lServerNames << MANUAL_REMOTE_DATA;
     return lServerNames;
 }
 
@@ -162,5 +165,23 @@ void ServerManager::onPingForServers()
     {
         int iDelay = 2000 + (qrand() % 1000);
         QTimer::singleShot(iDelay, this, SLOT(onPingForServers()));
+    }
+}
+
+// Remote connect
+void ServerManager::remoteConnect(int iServerIndex)
+{
+    if (iServerIndex <= m_vFoundServerList.size())
+    {
+        // Use discovered session
+        m_hHostAddress = m_vFoundServerList[iServerIndex].IPAddress;
+        m_iHostPortNumber = REMOTE_CONNECT_PORT;
+        m_hHostViewAddress = m_hHostAddress;
+        m_iHostViewPortNumber = m_iHostPortNumber + 1;
+    }
+    // Manual remote data
+    else
+    {
+
     }
 }

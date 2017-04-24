@@ -30,3 +30,4 @@ QObject *Controller::serverManager() const
 {
     return m_pServerManager;
 }
+
