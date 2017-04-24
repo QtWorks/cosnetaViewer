@@ -15,7 +15,7 @@ Item {
     // Fonts
     readonly property string mainFontFamily: "Segoe UI"
     readonly property int mainFontSize: 32
-    readonly property color mainFontColor: "#4D4D4D"
+    readonly property color mainFontColor: "#8F5690"
 
     // Sizes
     readonly property int standardWidgetWidth: 128
@@ -28,12 +28,12 @@ Item {
     readonly property color redColor: "red"
 
     // Header
-    readonly property int headerHeight: 48
-    readonly property color headerColor: "#4D4D4D"
+    readonly property int headerHeight: 52
+    readonly property color headerColor: "lightgray"
 
     // Footer
-    readonly property int footerHeight: 48
-    readonly property color footerColor: "#4D4D4D"
+    readonly property int footerHeight: 52
+    readonly property color footerColor: "lightgray"
 
     // Splash page
     readonly property int splashTimerDuration: 2000
@@ -41,7 +41,7 @@ Item {
     // Dynamic toolbar
     readonly property int toolbarItemSpacing: 8
     readonly property int toolbarItemSize: 52
-    readonly property color toolbarBackgroundColor: "lightgray"
+    readonly property color toolbarBackgroundColor: headerColor
     readonly property int leftWingAnimationDuration: 1500
     readonly property color buttonHighlightBorderColor: "orange"
     readonly property color buttonHighlightColor: "lightgray"

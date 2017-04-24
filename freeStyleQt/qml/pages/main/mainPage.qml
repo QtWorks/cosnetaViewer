@@ -8,16 +8,24 @@ import "../../toolbar/qml"
 
 PageBase {
     id: root
-    headerVisible: false
-    footerVisible: false
+    headerVisible: true
+    footerVisible: true
 
     property int cellSize: 48
     property int nItems: 5
+
+    // Main toolbar
+    headerContents: MainToolBar {
+        id: mainToolBar
+        anchors.right: parent.right
+        anchors.top: parent.top
+    }
 
     // Page contents
     pageContents: Item {
         anchors.fill: parent
 
+        /*
         // Background
         Rectangle {
             id: toolBarBackground
@@ -26,14 +34,7 @@ PageBase {
             height: mainToolBar.height
             color: Theme.toolbarBackgroundColor
         }
-
-        // Main toolbar
-        MainToolBar {
-            id: mainToolBar
-            anchors.right: parent.right
-            anchors.rightMargin: 8
-            anchors.top: parent.top
-        }
+        */
 
         /*
         // Back button

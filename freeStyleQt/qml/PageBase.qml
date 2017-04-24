@@ -1,12 +1,13 @@
 import QtQuick 2.5
 
-Item {
+Rectangle {
     id: root
     property alias headerVisible: pageHeader.visible
     property alias headerContents: pageHeader.children
     property alias footerVisible: pageFooter.visible
     property alias footerContents: pageFooter.children
     property alias pageContents: pageContents.children
+    color: "black"
 
     // Page object (from JSON)
     property variant pageObject
@@ -21,9 +22,8 @@ Item {
     // Page contents
     Item {
         id: pageContents
-        objectName: "toto"
-        anchors.top: pageHeader.bottom// headerVisible ? pageHeader.bottom : parent.top
-        anchors.bottom: pageFooter.top //footerVisible ? pageFooter.top : parent.bottom
+        anchors.top: headerVisible ? pageHeader.bottom : parent.top
+        anchors.bottom: footerVisible ? pageFooter.top : parent.bottom
         width: parent.width
     }
 
