@@ -19,6 +19,8 @@
 *.dll
 *.exe
 *.stash
+*.so
 *Makefile*
 bin
 freeStyleQt/android-libfreestyleqtd.so-deployment-settings.json
+app_process
