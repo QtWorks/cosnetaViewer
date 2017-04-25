@@ -8,13 +8,13 @@ QT += core network gui widgets
 android: QT += androidextras
 INCLUDEPATH += $$PWD/../freeStyleQt ../cosnetaapi
 
-DEFINES += OVERLAYMANAGER_LIBRARY
+DEFINES += ROOMMANAGER_LIBRARY
 TEMPLATE = lib
 
 CONFIG(debug, debug|release) {
-    TARGET = overlayMgrd
+    TARGET = roomManagerd
 } else {
-    TARGET = overlayMgr
+    TARGET = roomManager
 }
 
 unix {
@@ -42,10 +42,13 @@ win32 {
 }
 
 HEADERS += \
-    overlaymanager.h \
-    overlaymanager_global.h
+    overlaymanager_global.h \
+    roommanager.h \
+    roommanager_global.h \
+    room.h
 
 SOURCES += \
-    overlaymanager.cpp
+    roommanager.cpp \
+    room.cpp
 
 

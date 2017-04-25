@@ -8,7 +8,7 @@
 
 // Constructor
 Controller::Controller(QObject *parent) : QObject(parent),
-    m_pServerManager(NULL), m_eCurrentMode(ViewMode)
+    m_pServerManager(NULL)
 {
     // Register type
     qmlRegisterType<Controller>("components", 1, 0, "Controller");
@@ -34,17 +34,3 @@ QObject *Controller::serverManager() const
 {
     return m_pServerManager;
 }
-
-// Set current mode
-void Controller::setCurrentMode(int iCurrentMode)
-{
-    m_eCurrentMode = (AppMode)iCurrentMode;
-    emit currentModeChanged();
-}
-
-// Return current mode
-int Controller::currentMode() const
-{
-    return (int)m_eCurrentMode;
-}
-

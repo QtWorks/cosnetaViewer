@@ -2,8 +2,9 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     cosnetaAPI \
-    servermanager \
+    serverManager \
     freeStyleQt \
-    overlaymanager
+    overlayManager \
+    roomManager
 
 

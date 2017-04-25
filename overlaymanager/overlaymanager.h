@@ -10,7 +10,13 @@
 
 class OVERLAYMANAGERSHARED_EXPORT Overlaymanager : public QObject, public IService
 {
+    Q_OBJECT
+    Q_PROPERTY(int currentMode READ currentMode WRITE setCurrentMode NOTIFY currentModeChanged)
+    Q_ENUMS(AppMode)
+
 public:
+    enum AppMode {ViewMode=0, PrivateNotesMode, PublicAnnotationMode, PresentationMode, MouseMode};
+
     // Constructor
     Overlaymanager(QObject *parent=NULL);
 
@@ -19,6 +25,20 @@ public:
 
     // Shutdown
     virtual void shutdown();
+
+    // Set current mode
+    void setCurrentMode(int iCurrentMode);
+
+    // Return current mode
+    int currentMode() const;
+
+private:
+    // Current mode
+    AppMode m_eCurrentMode;
+
+signals:
+    // Current mode changed
+    void currentModeChanged();
 };
 
 #endif // OVERLAYMANAGER_H

@@ -47,7 +47,6 @@ win32 {
 
 HEADERS += \
     controller.h \
-    defs.h \
     freestyleqt.h \
     iservice.h \
     baseview.h \

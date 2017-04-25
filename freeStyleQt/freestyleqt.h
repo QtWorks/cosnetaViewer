@@ -3,7 +3,6 @@
 
 // Application
 #include "iservice.h"
-#include "defs.h"
 #include "csingleton.h"
 class Controller;
 class BaseView;
@@ -22,10 +21,10 @@ public:
 
 private:
     // Controller
-    ControllerPtr m_pController;
+    Controller *m_pController;
 
     // View
-    ViewPtr m_pView;
+    BaseView *m_pView;
 };
 
 #endif // FREESTYLEQT_H

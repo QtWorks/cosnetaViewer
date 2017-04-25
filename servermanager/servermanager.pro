@@ -12,9 +12,9 @@ DEFINES += SERVERMANAGER_LIBRARY
 TEMPLATE = lib
 
 CONFIG(debug, debug|release) {
-    TARGET = servermgrd
+    TARGET = serverMgrd
 } else {
-    TARGET = servermgr
+    TARGET = serverMgr
 }
 
 unix {

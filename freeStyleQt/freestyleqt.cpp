@@ -2,26 +2,22 @@
 #include "freestyleqt.h"
 #include "controller.h"
 #include "baseview.h"
-//#include <overlaywindow.h>
 
 // Constructor
 FreeStyleQt::FreeStyleQt()
 {
     // Build controller
-    m_pController = ControllerPtr(new Controller());
+    m_pController = new Controller();
 
     // Build view
-    m_pView = ViewPtr(new BaseView());
-    m_pView->setContextProperty("controller", m_pController.data());
+    m_pView = new BaseView();
+    m_pView->setContextProperty("controller", m_pController);
     m_pView->setSource(QUrl("qrc:/qml/main.qml"));
 }
 
 // Startup
 bool FreeStyleQt::startup()
 {
-//bool sysTrayIsRunning = true;
-//overlayWindow w(sysTrayIsRunning);
-
     // Show view
     if (m_pController->startup()) {
         m_pView->showMaximized();

@@ -13,12 +13,8 @@ class Controller : public QObject, public IService
 {
     Q_OBJECT
     Q_PROPERTY(QObject *serverManager READ serverManager NOTIFY serverManagerChanged)
-    Q_PROPERTY(int currentMode READ currentMode WRITE setCurrentMode NOTIFY currentModeChanged)
-    Q_ENUMS(ViewMode)
 
 public:
-    enum AppMode {ViewMode=0, PrivateNotesMode, PublicAnnotationMode, PresentationMode, MouseMode};
-
     // Constructor
     explicit Controller(QObject *parent = 0);
 
@@ -31,25 +27,13 @@ public:
     // Return server manager
     QObject *serverManager() const;
 
-    // Set current mode
-    void setCurrentMode(int iCurrentMode);
-
-    // Return current mode
-    int currentMode() const;
-
 private:
     // Server manager
     ServerManager *m_pServerManager;
 
-    // Current mode
-    AppMode m_eCurrentMode;
-
 signals:
     // Server manager changed
     void serverManagerChanged();
-
-    // Current mode changed
-    void currentModeChanged();
 };
 
 #endif // CONTROLLER_H
