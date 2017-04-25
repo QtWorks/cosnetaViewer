@@ -10,14 +10,14 @@ android: QT += androidextras
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TEMPLATE = app
-INCLUDEPATH += $$PWD/../cosnetaapi ../servermanager
-!android:!ios:DEPENDPATH += $$PWD/../cosnetaapi ../servermanager
+INCLUDEPATH += $$PWD/../cosnetaapi ../servermanager ../overlaymanager
+!android:!ios:DEPENDPATH += $$PWD/../cosnetaapi ../servermanager ../overlaymanager
 
 CONFIG(debug, debug|release) {
-    LIBS += -L$$PWD/../bin -lcosnetaAPId -lservermgrd
+    LIBS += -L$$PWD/../bin -lcosnetaAPId -lservermgrd #-loverlaymgrd
     TARGET = freestyleqtd
 } else {
-    LIBS += -L$$PWD/../bin -lcosnetaAPI -lservermgr
+    LIBS += -L$$PWD/../bin -lcosnetaAPI -lservermgr #-loverlaymgr
     TARGET = freestyleqt
 }
 

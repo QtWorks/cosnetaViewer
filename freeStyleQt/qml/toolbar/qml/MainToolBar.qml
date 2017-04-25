@@ -4,7 +4,7 @@ import "../.."
 
 Item {
     id: root
-    width: Theme.toolbarItemSize*10
+    width: Theme.toolbarItemSize*12
     height: Theme.toolbarItemSize
 
     // Current mode

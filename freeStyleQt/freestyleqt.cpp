@@ -2,6 +2,7 @@
 #include "freestyleqt.h"
 #include "controller.h"
 #include "baseview.h"
+//#include <overlaywindow.h>
 
 // Constructor
 FreeStyleQt::FreeStyleQt()
@@ -18,6 +19,9 @@ FreeStyleQt::FreeStyleQt()
 // Startup
 bool FreeStyleQt::startup()
 {
+//bool sysTrayIsRunning = true;
+//overlayWindow w(sysTrayIsRunning);
+
     // Show view
     if (m_pController->startup()) {
         m_pView->showMaximized();
