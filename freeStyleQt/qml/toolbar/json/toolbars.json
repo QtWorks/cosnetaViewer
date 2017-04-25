@@ -2,30 +2,30 @@
     "modes": [
         {
             "name": "viewMode",
-            "id": 0,
+            "modeId": 0,
             "icon": "qrc:/icons/view_mode.svg"
         },
         {
             "name": "privateNotesMode",
-            "id": 1,
+            "modeId": 1,
             "icon": "qrc:/icons/personal_notes.svg",
             "menuUrl": "qrc:/qml/toolbar/qml/submenus/PublicAnnotationWidget.qml"
         },
         {
             "name": "publicAnnotationMode",
-            "id": 2,
+            "modeId": 3,
             "icon": "qrc:/icons/annotate_mode.svg",
             "menuUrl": "qrc:/qml/toolbar/qml/submenus/PublicAnnotationWidget.qml"
         },
         {
             "name": "presentationMode",
-            "id": 3,
+            "modeId": 4,
             "icon": "qrc:/icons/Presentation.svg",
             "menuUrl": "qrc:/qml/toolbar/qml/submenus/PresentationModeWidget.qml"
         },
         {
             "name": "mouseMode",
-            "id": 4,
+            "modeId": 5,
             "icon": "qrc:/icons/mouse_mode.svg",
             "menuUrl": "qrc:/qml/toolbar/qml/submenus/MouseModeWidget.qml"
         }

@@ -6,7 +6,7 @@ Item {
     anchors.fill: parent
     property alias state: leftWing.state
     clip: true
-    signal toolBarItemClicked(string modeName)
+    signal toolBarItemClicked(int modeId)
     CustomToolBar {
         id: leftWing
         model: gToolBarSettings.modes
@@ -15,8 +15,8 @@ Item {
             NumberAnimation {duration: Theme.leftWingAnimationDuration; easing.type: Easing.OutElastic}
         }
         onToolBarItemClicked: {
-            if (modeData.name !== currentMode)
-                root.toolBarItemClicked(modeData.name)
+            if (itemData.modeId !== controller.currentMode)
+                root.toolBarItemClicked(itemData.modeId)
         }
         states: State {
             name: "opened"

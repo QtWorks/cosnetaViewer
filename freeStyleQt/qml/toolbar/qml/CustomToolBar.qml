@@ -7,7 +7,7 @@ Item {
     height: Theme.toolbarItemSize
     anchors.verticalCenter: parent.verticalCenter
     property alias model: listView.model
-    signal toolBarItemClicked(variant modeData)
+    signal toolBarItemClicked(variant itemData)
 
     // Main list view
     ListView {
@@ -18,9 +18,9 @@ Item {
         interactive: false
         clip: true
         delegate: ToolBarRadioButtonDelegate {
-            modeData: modelData
-            onToolBarItemClicked: root.toolBarItemClicked(modeData)
-            state: modeData.name === currentMode ? "active" : ""
+            itemData: modelData
+            onToolBarItemClicked: root.toolBarItemClicked(itemData)
+            state: itemData.modeId === controller.currentMode ? "active" : ""
         }
     }
 }

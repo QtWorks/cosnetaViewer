@@ -39,6 +39,7 @@ QObject *Controller::serverManager() const
 void Controller::setCurrentMode(int iCurrentMode)
 {
     m_eCurrentMode = (AppMode)iCurrentMode;
+    emit currentModeChanged();
 }
 
 // Return current mode

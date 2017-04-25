@@ -4,8 +4,8 @@ import "../.."
 // Image button
 ToolBarRadioButton {
     id: root
-    property variant modeData
-    source: modeData.icon
-    signal toolBarItemClicked(variant modeData)
-    onButtonClicked: toolBarItemClicked(modeData)
+    property variant itemData
+    source: itemData.icon
+    signal toolBarItemClicked(variant itemData)
+    onButtonClicked: toolBarItemClicked(itemData)
 }

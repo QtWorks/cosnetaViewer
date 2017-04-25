@@ -15,7 +15,7 @@ Item {
         Loader {
             anchors.fill: parent
             source: modelData.menuUrl
-            visible: modelData.name === currentMode
+            visible: modelData.modeId === controller.currentMode
         }
     }
 

@@ -7,9 +7,6 @@ Item {
     width: Theme.toolbarItemSize*12
     height: Theme.toolbarItemSize
 
-    // Current mode
-    property string currentMode: "viewMode"
-
     // Current drawing mode
     property string currentDrawingMode: "freehand"
 
@@ -19,19 +16,19 @@ Item {
     // Submenu url
     property variant subMenuData: []
 
-    // Return mode data
-    function getModeData(modeName) {
+    // Return item data
+    function getItemData(modeId) {
         for (var i=0; i<gToolBarSettings.modes.length; i++) {
-            if (modeName === gToolBarSettings.modes[i].name)
+            if (modeId === gToolBarSettings.modes[i].modeId)
                 return gToolBarSettings.modes[i]
         }
         return null
     }
 
     // Set current mode
-    function setCurrentMode(modeName) {
-        currentMode = modeName
-        rightWing.setCurrentMode(modeName)
+    function setCurrentMode(modeId) {
+        controller.currentMode = modeId
+        rightWing.setCurrentMode(modeId)
     }
 
     // Left wing
@@ -39,8 +36,8 @@ Item {
         id: leftWing
         anchors.fill: parent
         onToolBarItemClicked: {
-            console.log("SETTING MODE TO ", modeName)
-            root.setCurrentMode(modeName)
+            console.log("SETTING MODE TO ", modeId)
+            root.setCurrentMode(modeId)
         }
     }
 
@@ -62,7 +59,7 @@ Item {
         onCloseMenu: leftWing.state = ""
         onHideSubMenu: menuDisplay.state = ""
         onToolBarItemClicked: {
-            if (modeData.name !== "grab") {
+            if (itemData.name !== "grab") {
                 if (menuDisplay.state === "")
                     menuDisplay.state = "on"
                 else
@@ -81,11 +78,11 @@ Item {
 
     Component.onCompleted: {
         for (var i=0; i<gToolBarSettings.modes.length; i++) {
-            var modeData = gToolBarSettings.modes[i]
-            var optionsMenuIsDefined = (typeof modeData.menuUrl !== "undefined") && (modeData.menuUrl !== null)
-            var currentModeHasOptions = optionsMenuIsDefined && (modeData.menuUrl.length > 0)
+            var itemData = gToolBarSettings.modes[i]
+            var optionsMenuIsDefined = (typeof itemData.menuUrl !== "undefined") && (itemData.menuUrl !== null)
+            var currentModeHasOptions = optionsMenuIsDefined && (itemData.menuUrl.length > 0)
             if (currentModeHasOptions)
-                subMenuData.push(modeData)
+                subMenuData.push(itemData)
             menuDisplay.model = subMenuData
         }
     }

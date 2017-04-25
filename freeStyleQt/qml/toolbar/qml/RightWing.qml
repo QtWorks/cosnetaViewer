@@ -11,7 +11,7 @@ Flow {
     signal openMenu()
     signal closeMenu()
     signal hideSubMenu()
-    signal toolBarItemClicked(variant modeData)
+    signal toolBarItemClicked(variant itemData)
 
     function openLeftWing() {
         openCloseMenuBton.state = "opened"
@@ -24,21 +24,21 @@ Flow {
     }
 
     // Set current mode
-    function setCurrentMode(modeName) {
-        // Retrieve mode data
-        var modeData = getModeData(modeName)
+    function setCurrentMode(modeId) {
+        // Retrieve item data
+        var itemData = getItemData(modeId)
 
         // Found mode
-        if ((typeof modeData !== "undefined") && (modeData !== null)) {
+        if ((typeof itemData !== "undefined") && (itemData !== null)) {
             // Set default item number
             nItems = 3
 
             // Check if item has a menu
-            modeOptionsBtn.modeData = modeData
+            modeOptionsBtn.itemData = itemData
 
             // Does mode have an associated menu?
-            var optionsMenuIsDefined = (typeof modeData.menuUrl !== "undefined") && (modeData.menuUrl !== null)
-            currentModeHasOptions = optionsMenuIsDefined && (modeData.menuUrl.length > 0)
+            var optionsMenuIsDefined = (typeof itemData.menuUrl !== "undefined") && (itemData.menuUrl !== null)
+            currentModeHasOptions = optionsMenuIsDefined && (itemData.menuUrl.length > 0)
             modeOptionsBtn.visible = currentModeHasOptions
             if (currentModeHasOptions)
                 nItems = 4
@@ -48,7 +48,7 @@ Flow {
     // Open/close menu
     ToolBarButtonDelegate {
         id: openCloseMenuBton
-        modeData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_previous.svg"}
+        itemData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_previous.svg"}
         onToolBarItemClicked: {
             if (state === "")
                 openLeftWing()
@@ -60,7 +60,7 @@ Flow {
             name: "opened"
             PropertyChanges {
                 target: openCloseMenuBton
-                modeData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_next.svg"}
+                itemData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_next.svg"}
             }
         }
     }
@@ -68,7 +68,7 @@ Flow {
     // Cosneta logo
     ToolBarButtonDelegate {
         id: cosnetaBtn
-        modeData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_closed.svg"}
+        itemData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_closed.svg"}
         onToolBarItemClicked: {
             if (root.state === "") {
                 nItems = 2
@@ -77,7 +77,7 @@ Flow {
                 hideSubMenu()
             }
             else {
-                setCurrentMode(currentMode)
+                setCurrentMode(controller.currentMode)
                 root.state = ""
                 openLeftWing()
                 hideSubMenu()
@@ -88,8 +88,8 @@ Flow {
     // Mode options
     ToolBarButtonDelegate {
         id: modeOptionsBtn
-        modeData: {"name": "modeOptions", "icon": "qrc:/qml/toolbar/icons/question.svg"}
-        onToolBarItemClicked: root.toolBarItemClicked(modeData)
+        itemData: {"name": "modeOptions", "icon": "qrc:/qml/toolbar/icons/question.svg"}
+        onToolBarItemClicked: root.toolBarItemClicked(itemData)
         visible: currentModeHasOptions
         borderVisible: true
     }
@@ -97,8 +97,8 @@ Flow {
     // Camera button
     ToolBarButtonDelegate {
         id: cameraBtn
-        modeData: {"name": "grab", "icon": "qrc:/qml/toolbar/icons/snapshot.svg"}
-        onToolBarItemClicked: root.toolBarItemClicked(modeData)
+        itemData: {"name": "grab", "icon": "qrc:/qml/toolbar/icons/snapshot.svg"}
+        onToolBarItemClicked: root.toolBarItemClicked(itemData)
     }
 
     // Compact mode
@@ -114,7 +114,7 @@ Flow {
         }
         PropertyChanges {
             target: cosnetaBtn
-            modeData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_open.svg"}
+            itemData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_open.svg"}
         }
     }
 }
