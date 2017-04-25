@@ -1,9 +1,8 @@
 import QtQuick 2.5
-import QtQuick.Controls 1.2
-import QtQuick.Window 2.0
+import QtQuick.Controls 1.4
 
 StackView {
-    id: pageMgr
+    id: root
 
     // Depth changed
     onDepthChanged: console.log("--- DEPTH --- " + depth)
@@ -28,49 +27,9 @@ StackView {
             loadPage(gPageSettings[0].name)
     }
 
-    // Create page
-    function createPage(pageName)
+    // Create page (virtual)
+    function createPage(pageIdentifier)
     {
-        // Get page description
-        var pageObject = getPageObject(pageName)
-        if (!pageObject) {
-            console.log("CAN'T GET PAGE: " + pageName)
-            return null
-        }
-
-        // Create a new page component
-        var component = Qt.createComponent(pageObject.url)
-        if (!component) {
-            console.log("CAN'T CREATE: " + pageObject.url)
-            return null
-        }
-
-        // Create page
-        var page = component.createObject(pageMgr, {"pageObject": pageObject})
-        if (!page)
-        {
-            console.log("CREATEPAGE ERROR: " + component.errorString())
-            return null
-        }
-
-        // Initialize page
-        page.initialize()
-
-        return page
-    }
-
-    // Get page object
-    function getPageObject(name)
-    {
-        for (var i=0; i<gPageSettings.length; i++)
-        {
-            var pageObject = gPageSettings[i]
-            if ((typeof pageObject !== "undefined") && (pageObject !== null))
-            {
-                if (pageObject.name === name)
-                    return pageObject
-            }
-        }
         return null
     }
 

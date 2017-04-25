@@ -6,7 +6,6 @@
         <file>qml/PageBase.qml</file>
         <file>qml/PageFooter.qml</file>
         <file>qml/PageHeader.qml</file>
-        <file>qml/PageMgr.qml</file>
         <file>qml/qmldir</file>
         <file>qml/StandardButton.qml</file>
         <file>qml/StandardText.qml</file>
@@ -136,5 +135,9 @@
         <file>qml/ToolBarButton.qml</file>
         <file>qml/ToolBarRadioButton.qml</file>
         <file>qml/toolbar/icons/arrow_down.svg</file>
+        <file>qml/RoomPageMgr.qml</file>
+        <file>qml/PageMgr.qml</file>
+        <file>qml/MainPageMgr.qml</file>
+        <file>RoomPageMgr.qml</file>
     </qresource>
 </RCC>
