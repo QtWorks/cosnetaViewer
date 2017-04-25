@@ -13,6 +13,7 @@ class Controller : public QObject, public IService
 {
     Q_OBJECT
     Q_PROPERTY(QObject *serverManager READ serverManager NOTIFY serverManagerChanged)
+    Q_PROPERTY(int currentMode READ currentMode WRITE setCurrentMode NOTIFY currentModeChanged)
     Q_ENUMS(ViewMode)
 
 public:
@@ -46,6 +47,9 @@ private:
 signals:
     // Server manager changed
     void serverManagerChanged();
+
+    // Current mode changed
+    void currentModeChanged();
 };
 
 #endif // CONTROLLER_H
