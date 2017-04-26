@@ -1,5 +1,5 @@
-import QtQuick 2.0
-import "."
+import QtQuick 2.5
+import ".."
 
 Rectangle {
     height: Theme.footerHeight

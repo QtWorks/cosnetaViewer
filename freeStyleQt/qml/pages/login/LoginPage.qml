@@ -1,17 +1,16 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
-import "."
 import "../.."
+import "../../generic"
+import "../../pages"
 
 PageBase {
     id: root
     headerVisible: false
     footerVisible: false
 
-    property int cellSize: 48
-    property int nItems: 5
-
+    // Contents
     pageContents: Item {
         anchors.centerIn: parent
         width: root.width < root.height ? root.width : root.height
@@ -116,6 +115,7 @@ PageBase {
             height: Theme.standardWidgetHeight
             property int divider: controller.serverManager.serverCount > 0 ? 3 : 3
 
+            // Connect button
             Item {
                 width: parent.width/row.divider
                 height: parent.height
@@ -133,6 +133,7 @@ PageBase {
                 }
             }
 
+            // Help button
             Item {
                 width: parent.width/row.divider
                 height: parent.height
@@ -145,6 +146,7 @@ PageBase {
                 }
             }
 
+            // Quit button
             Item {
                 width: parent.width/row.divider
                 height: parent.height

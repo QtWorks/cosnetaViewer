@@ -2,8 +2,10 @@ import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
+import Components 1.0
+import "../../../generic"
 import "../../.."
-import ".."
+import "../../../toolbar/qml"
 
 TabView {
     id: root
@@ -77,8 +79,8 @@ TabView {
                         ToolBarRadioButton {
                             source: "qrc:/qml/toolbar/icons/freehand.svg"
                             anchors.centerIn: parent
-                            onButtonClicked: currentDrawingMode = "freehand"
-                            state: currentDrawingMode === "freehand" ? "active" : ""
+                            onButtonClicked: controller.roomManager.currentRoom.currentDrawingMode = Room.FreeHand
+                            state: controller.roomManager.currentRoom.currentDrawingMode === Room.FreeHand ? "active" : ""
                             label: qsTr("Line")
                         }
                     }
@@ -88,8 +90,8 @@ TabView {
                         ToolBarRadioButton {
                             source: "qrc:/qml/toolbar/icons/triangle_stamp.svg"
                             anchors.centerIn: parent
-                            onButtonClicked: currentDrawingMode = "triangle"
-                            state: currentDrawingMode === "triangle" ? "active" : ""
+                            onButtonClicked: controller.roomManager.currentRoom.currentDrawingMode = Room.Triangle
+                            state: controller.roomManager.currentRoom.currentDrawingMode === Room.Triangle ? "active" : ""
                             label: qsTr("Tri")
                         }
                     }
@@ -99,8 +101,8 @@ TabView {
                         ToolBarRadioButton {
                             source: "qrc:/qml/toolbar/icons/square_stamp.svg"
                             anchors.centerIn: parent
-                            onButtonClicked: currentDrawingMode = "square"
-                            state: currentDrawingMode === "square" ? "active" : ""
+                            onButtonClicked: controller.roomManager.currentRoom.currentDrawingMode = Room.Square
+                            state: controller.roomManager.currentRoom.currentDrawingMode === Room.Square ? "active" : ""
                             label: qsTr("Squ")
                         }
                     }
@@ -110,8 +112,8 @@ TabView {
                         ToolBarRadioButton {
                             source: "qrc:/qml/toolbar/icons/circle_stamp.svg"
                             anchors.centerIn: parent
-                            onButtonClicked: currentDrawingMode = "circle"
-                            state: currentDrawingMode === "circle" ? "active" : ""
+                            onButtonClicked: controller.roomManager.currentRoom.currentDrawingMode = Room.Circle
+                            state: controller.roomManager.currentRoom.currentDrawingMode === Room.Circle ? "active" : ""
                             label: qsTr("Circle")
                         }
                     }
@@ -121,8 +123,8 @@ TabView {
                         ToolBarRadioButton {
                             source: "qrc:/qml/toolbar/icons/clone_stamp.svg"
                             anchors.centerIn: parent
-                            onButtonClicked: currentDrawingMode = "stamp"
-                            state: currentDrawingMode === "stamp" ? "active" : ""
+                            onButtonClicked: controller.roomManager.currentRoom.currentDrawingMode = Room.Stamp
+                            state: controller.roomManager.currentRoom.currentDrawingMode === Room.Stamp ? "active" : ""
                             label: qsTr("Stamp")
                         }
                     }

@@ -1,5 +1,6 @@
 import QtQuick 2.5
-import "."
+import "../.."
+import "../../generic"
 
 Item {
     id: root
@@ -12,7 +13,7 @@ Item {
 
     // Show background
     onSourceChanged: {
-        if (borderVisible && (menuDisplay.state === "")) {
+        if (borderVisible) {
             borderAnim.stop()
             borderAnim.start()
         }

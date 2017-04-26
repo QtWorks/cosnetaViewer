@@ -11,13 +11,16 @@ Flow {
     signal openMenu()
     signal closeMenu()
     signal hideSubMenu()
-    signal toolBarItemClicked(variant itemData)
+    signal modeOptionsButtonClicked(variant itemData)
+    signal cameraBtnClicked()
 
+    // Open left wing
     function openLeftWing() {
         openCloseMenuBton.state = "opened"
         root.openMenu()
     }
 
+    // Close left wing
     function closeLeftWing() {
         openCloseMenuBton.state = ""
         root.closeMenu()
@@ -46,10 +49,10 @@ Flow {
     }
 
     // Open/close menu
-    ToolBarButtonDelegate {
+    ToolBarButton {
         id: openCloseMenuBton
-        itemData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_previous.svg"}
-        onToolBarItemClicked: {
+        source: "qrc:/qml/toolbar/icons/arrow_previous.svg"
+        onButtonClicked: {
             if (state === "")
                 openLeftWing()
             else
@@ -60,24 +63,25 @@ Flow {
             name: "opened"
             PropertyChanges {
                 target: openCloseMenuBton
-                itemData: {"name": "openCloseMenu", "icon": "qrc:/qml/toolbar/icons/arrow_next.svg"}
+                source: "qrc:/qml/toolbar/icons/arrow_next.svg"
             }
         }
     }
 
     // Cosneta logo
-    ToolBarButtonDelegate {
+    ToolBarButton {
         id: cosnetaBtn
-        itemData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_closed.svg"}
-        onToolBarItemClicked: {
+        source: "qrc:/qml/toolbar/icons/app_menu_closed.svg"
+        onButtonClicked: {
             if (root.state === "") {
                 nItems = 2
                 root.state = "compact"
                 closeLeftWing()
                 hideSubMenu()
             }
-            else {
-                setCurrentMode(controller.currentMode)
+            else
+            {
+                setCurrentMode(controller.roomManager.currentRoom.currentMode)
                 root.state = ""
                 openLeftWing()
                 hideSubMenu()
@@ -89,16 +93,16 @@ Flow {
     ToolBarButtonDelegate {
         id: modeOptionsBtn
         itemData: {"name": "modeOptions", "icon": "qrc:/qml/toolbar/icons/question.svg"}
-        onToolBarItemClicked: root.toolBarItemClicked(itemData)
+        onToolBarItemClicked: root.modeOptionsButtonClicked(itemData)
         visible: currentModeHasOptions
         borderVisible: true
     }
 
     // Camera button
-    ToolBarButtonDelegate {
+    ToolBarButton {
         id: cameraBtn
-        itemData: {"name": "grab", "icon": "qrc:/qml/toolbar/icons/snapshot.svg"}
-        onToolBarItemClicked: root.toolBarItemClicked(itemData)
+        source: "qrc:/qml/toolbar/icons/snapshot.svg"
+        onButtonClicked: cameraBtnClicked()
     }
 
     // Compact mode

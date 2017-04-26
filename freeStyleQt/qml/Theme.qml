@@ -59,4 +59,14 @@ Item {
     // Button label height
     readonly property int buttonLabelHeight: 16
     readonly property int buttonLabelPixelSize: 12
+
+    // Standard item spacing
+    readonly property int standardItemSpacing: 8
+
+    // Standard item margin
+    readonly property int standardItemMargin: 8
+
+    // Menu display
+    readonly property int menuDisplayColumnNumber: 5
+    readonly property int menuDisplayRowNumber: 2
 }

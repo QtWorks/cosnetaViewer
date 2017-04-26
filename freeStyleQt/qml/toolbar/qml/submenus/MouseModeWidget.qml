@@ -1,5 +1,7 @@
 import QtQuick 2.5
 import "../../.."
+import "../../../generic"
+import "../../../toolbar/qml"
 
 Rectangle {
     color: Theme.widgetBackgroundColor

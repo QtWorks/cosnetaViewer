@@ -1,5 +1,4 @@
 import QtQuick 2.5
-import "../.."
 
 // Image button
 ToolBarRadioButton {

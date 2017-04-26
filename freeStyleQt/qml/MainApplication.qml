@@ -1,5 +1,6 @@
 import QtQuick 2.5
+import "pages"
 
-MainPageMgr {
+PageMgr {
     anchors.fill: parent
 }

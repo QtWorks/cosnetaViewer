@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT += core network gui widgets
+QT += core network gui widgets qml quick quickwidgets
 android: QT += androidextras
 INCLUDEPATH += $$PWD/../freeStyleQt ../cosnetaapi
 
@@ -42,7 +42,6 @@ win32 {
 }
 
 HEADERS += \
-    overlaymanager_global.h \
     roommanager.h \
     roommanager_global.h \
     room.h

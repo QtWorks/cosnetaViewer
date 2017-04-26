@@ -15,7 +15,7 @@ Item {
             NumberAnimation {duration: Theme.leftWingAnimationDuration; easing.type: Easing.OutElastic}
         }
         onToolBarItemClicked: {
-            if (itemData.modeId !== controller.currentMode)
+            if (itemData.modeId !== controller.roomManager.currentRoom.currentMode)
                 root.toolBarItemClicked(itemData.modeId)
         }
         states: State {

@@ -3,13 +3,7 @@
         <file>qml/JSONParser.qml</file>
         <file>qml/main.qml</file>
         <file>qml/MainApplication.qml</file>
-        <file>qml/PageBase.qml</file>
-        <file>qml/PageFooter.qml</file>
-        <file>qml/PageHeader.qml</file>
         <file>qml/qmldir</file>
-        <file>qml/StandardButton.qml</file>
-        <file>qml/StandardText.qml</file>
-        <file>qml/StandardTextField.qml</file>
         <file>qml/Theme.qml</file>
         <file>background/cosnetameetingpurple.jpg</file>
         <file>qml/pages/splash/SplashPage.qml</file>
@@ -18,7 +12,6 @@
         <file>settings/generalsettings.json</file>
         <file>settings/pages.json</file>
         <file>background/freestyle_logo.png</file>
-        <file>qml/StandardComboBox.qml</file>
         <file>icons/annotate_mode.svg</file>
         <file>icons/app_menu_closed.svg</file>
         <file>icons/app_menu_open.svg</file>
@@ -67,7 +60,6 @@
         <file>icons/undo.svg</file>
         <file>icons/undo_all.svg</file>
         <file>icons/view_mode.svg</file>
-        <file>qml/ImageButton.qml</file>
         <file>qml/toolbar/icons/annotate_mode.svg</file>
         <file>qml/toolbar/icons/app_menu_closed.svg</file>
         <file>qml/toolbar/icons/app_menu_open.svg</file>
@@ -132,14 +124,21 @@
         <file>qml/toolbar/qml/ToolBarRadioButtonDelegate.qml</file>
         <file>qml/pages/main/mainPage.qml</file>
         <file>background/cosneta_logo.png</file>
-        <file>qml/ToolBarButton.qml</file>
-        <file>qml/ToolBarRadioButton.qml</file>
         <file>qml/toolbar/icons/arrow_down.svg</file>
-        <file>qml/RoomPageMgr.qml</file>
-        <file>qml/PageMgr.qml</file>
-        <file>qml/MainPageMgr.qml</file>
         <file>icons/add.svg</file>
         <file>icons/remove.svg</file>
-        <file>qml/RoomPage.qml</file>
+        <file>qml/pages/PageBase.qml</file>
+        <file>qml/pages/PageFooter.qml</file>
+        <file>qml/pages/PageHeader.qml</file>
+        <file>qml/pages/PageMgr.qml</file>
+        <file>qml/room/RoomPageDelegate.qml</file>
+        <file>qml/room/RoomPageMgr.qml</file>
+        <file>qml/generic/ImageButton.qml</file>
+        <file>qml/generic/StandardButton.qml</file>
+        <file>qml/generic/StandardComboBox.qml</file>
+        <file>qml/generic/StandardText.qml</file>
+        <file>qml/generic/StandardTextField.qml</file>
+        <file>qml/toolbar/qml/ToolBarButton.qml</file>
+        <file>qml/toolbar/qml/ToolBarRadioButton.qml</file>
     </qresource>
 </RCC>

@@ -1,29 +1,47 @@
 import QtQuick 2.5
 import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.4
-import "."
-import ".."
-import "../.."
+import "../../pages"
+import "../../generic"
+import "../../room"
 import "../../toolbar/qml"
 
 PageBase {
     id: root
-    headerVisible: true
+    headerVisible: false
     footerVisible: true
 
-    property int cellSize: 48
-    property int nItems: 5
-
-    // Main toolbar
-    headerContents: MainToolBar {
-        id: mainToolBar
-        anchors.right: parent.right
-        anchors.top: parent.top
+    // Page contents
+    pageContents: RoomPageMgr {
+        anchors.fill: parent
     }
 
-    // Page contents
-    pageContents: Item {
+    // Footer
+    footerContents: RowLayout {
         anchors.fill: parent
+
+        // Previous room
+        ToolBarButton {
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        // Add room
+        ToolBarButton {
+            anchors.verticalCenter: parent.verticalCenter
+            onButtonClicked: controller.roomManager.addRoom()
+        }
+
+        // Remove current room
+        ToolBarButton {
+            anchors.verticalCenter: parent.verticalCenter
+            onButtonClicked: controller.roomManager.removeCurrentRoom()
+        }
+
+        // Next room
+        ToolBarButton {
+            anchors.verticalCenter: parent.verticalCenter
+        }
     }
 
     // Initialize
@@ -33,11 +51,6 @@ PageBase {
 
     // Finalize
     function finalize() {
-
-    }
-
-    // Next page name
-    function nextPageName() {
 
     }
 }

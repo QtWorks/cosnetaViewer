@@ -1,5 +1,6 @@
 import QtQuick 2.5
-import "."
+import "../.."
+import "../../generic"
 
 Rectangle {
     id: root

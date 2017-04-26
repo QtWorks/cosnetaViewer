@@ -20,7 +20,7 @@ Item {
         delegate: ToolBarRadioButtonDelegate {
             itemData: modelData
             onToolBarItemClicked: root.toolBarItemClicked(itemData)
-            state: itemData.modeId === controller.currentMode ? "active" : ""
+            state: itemData.modeId === controller.roomManager.currentRoom.currentMode ? "active" : ""
         }
     }
 }

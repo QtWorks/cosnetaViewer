@@ -1,6 +1,5 @@
 // Qt
 #include <QTimer>
-#include <qqml.h>
 
 // Application
 #include "controller.h"
@@ -11,9 +10,6 @@
 Controller::Controller(QObject *parent) : QObject(parent),
     m_pServerManager(NULL), m_pRoomManager(NULL)
 {
-    // Register type
-    qmlRegisterType<Controller>("components", 1, 0, "Controller");
-
     // Build server manager
     m_pServerManager = new ServerManager(this);
 
@@ -42,5 +38,5 @@ QObject *Controller::serverManager() const
 // Return room manager
 QObject *Controller::roomManager() const
 {
-    return m_pServerManager;
+    return m_pRoomManager;
 }
