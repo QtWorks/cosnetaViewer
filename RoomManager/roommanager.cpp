@@ -5,7 +5,7 @@
 // Constructor
 RoomManager::RoomManager(QObject *parent) : QObject(parent)
 {
-
+    addRoom();
 }
 
 // Startup

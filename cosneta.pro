@@ -1,10 +1,10 @@
 TEMPLATE = subdirs
-
+CONFIG += ordered
 SUBDIRS += \
     cosnetaAPI \
     serverManager \
-    freeStyleQt \
     overlayManager \
-    roomManager
+    roomManager \
+    freeStyleQt \
 
 

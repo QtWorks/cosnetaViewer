@@ -138,6 +138,8 @@
         <file>qml/RoomPageMgr.qml</file>
         <file>qml/PageMgr.qml</file>
         <file>qml/MainPageMgr.qml</file>
-        <file>RoomPageMgr.qml</file>
+        <file>icons/add.svg</file>
+        <file>icons/remove.svg</file>
+        <file>qml/RoomPage.qml</file>
     </qresource>
 </RCC>

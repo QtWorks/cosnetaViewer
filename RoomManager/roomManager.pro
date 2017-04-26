@@ -12,9 +12,9 @@ DEFINES += ROOMMANAGER_LIBRARY
 TEMPLATE = lib
 
 CONFIG(debug, debug|release) {
-    TARGET = roomManagerd
+    TARGET = roomMgrd
 } else {
-    TARGET = roomManager
+    TARGET = roomMgr
 }
 
 unix {
