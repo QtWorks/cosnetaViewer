@@ -69,9 +69,9 @@ Flow {
     }
 
     // Cosneta logo
-    ToolBarButton {
+    ToolBarButtonDelegate {
         id: cosnetaBtn
-        source: "qrc:/qml/toolbar/icons/app_menu_closed.svg"
+        itemData: {"name": "cosneta", "icon": "qrc:/qml/toolbar/icons/app_menu_closed.svg"}
         onButtonClicked: {
             if (root.state === "") {
                 nItems = 2
