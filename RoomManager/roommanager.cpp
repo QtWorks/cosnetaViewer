@@ -7,7 +7,8 @@ RoomManager::RoomManager(QObject *parent) : QAbstractListModel(parent),
     m_iCurrentRoomIndex(-1)
 {
     // Add first room
-    addRoom();
+    for (int i=0; i<5; i++)
+        addRoom();
 }
 
 // Startup

@@ -20,7 +20,7 @@ bool FreeStyleQt::startup()
 {
     // Show view
     if (m_pController->startup()) {
-        m_pView->showMaximized();
+        m_pView->show();
         return true;
     }
     return false;

@@ -29,5 +29,6 @@ Item {
         orientation: Qt.Horizontal
         interactive: false
         model: visualModel
+        currentIndex: controller.roomManager.currentRoomIndex
     }
 }

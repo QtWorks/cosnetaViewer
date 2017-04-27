@@ -18,29 +18,61 @@ PageBase {
     }
 
     // Footer
-    footerContents: RowLayout {
+    footerContents: Row {
         anchors.fill: parent
 
-        // Previous room
-        ToolBarButton {
-            anchors.verticalCenter: parent.verticalCenter
+        Item {
+            width: parent.width/4
+            height: parent.height
+
+            // Previous room
+            ToolBarButton {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                source: "qrc:/icons/previous_page.svg"
+                onButtonClicked: {
+                    controller.roomManager.currentRoomIndex--
+                    console.log("ICI: ", controller.roomManager.currentRoomIndex)
+                }
+            }
         }
 
-        // Add room
-        ToolBarButton {
-            anchors.verticalCenter: parent.verticalCenter
-            onButtonClicked: controller.roomManager.addRoom()
+        Item {
+            width: parent.width/4
+            height: parent.height
+
+            // Add room
+            ToolBarButton {
+                anchors.centerIn: parent
+                onButtonClicked: controller.roomManager.addRoom()
+            }
         }
 
-        // Remove current room
-        ToolBarButton {
-            anchors.verticalCenter: parent.verticalCenter
-            onButtonClicked: controller.roomManager.removeCurrentRoom()
+        Item {
+            width: parent.width/4
+            height: parent.height
+
+            // Remove current room
+            ToolBarButton {
+                anchors.centerIn: parent
+                onButtonClicked: controller.roomManager.removeCurrentRoom()
+            }
         }
 
-        // Next room
-        ToolBarButton {
-            anchors.verticalCenter: parent.verticalCenter
+        Item {
+            width: parent.width/4
+            height: parent.height
+
+            // Next room
+            ToolBarButton {
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                source: "qrc:/icons/next_page.svg"
+                onButtonClicked: {
+                    controller.roomManager.currentRoomIndex++
+                    console.log("ICI: ", controller.roomManager.currentRoomIndex)
+                }
+            }
         }
     }
 
