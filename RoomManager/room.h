@@ -17,7 +17,8 @@ class ROOMMANAGERSHARED_EXPORT Room : public QObject
     Q_ENUMS(DrawingMode)
 
 public:
-    enum AppMode {ViewMode=0, PrivateNotesMode, PublicAnnotationMode, PresentationMode, MouseMode};
+    enum Mode {ViewMode=0, PrivateNotesMode, PublicAnnotationMode, PresentationMode, MouseMode};
+    enum Action {ToggleModeToolBar=0, Cosneta, ModeOptions, Camera};
     enum DrawingMode {FreeHand=0, Triangle, Square, Circle, Stamp};
 
     // Only room manager can create/delete room
@@ -53,7 +54,7 @@ private:
     QString m_sName;
 
     // Room mode
-    AppMode m_eCurrentMode;
+    Mode m_eCurrentMode;
 
     // Drawing mode
     DrawingMode m_eCurrentDrawingMode;

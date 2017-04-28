@@ -1,10 +1,13 @@
+// Qt
+#include <QDebug>
+
 // Application
 #include "roommanager.h"
 #include "room.h"
 
 // Constructor
 RoomManager::RoomManager(QObject *parent) : QAbstractListModel(parent),
-    m_iCurrentRoomIndex(-1)
+    m_iCurrentRoomIndex(0)
 {
     // Add first room
     for (int i=0; i<5; i++)
@@ -27,7 +30,7 @@ void RoomManager::shutdown()
 QHash<int, QByteArray> RoomManager::roleNames() const
 {
     QHash<int, QByteArray> hRoleNames;
-    hRoleNames[RoomName] = "roomName";
+    hRoleNames[RoomObject] = "roomObject";
     return hRoleNames;
 }
 
@@ -53,8 +56,8 @@ QVariant RoomManager::data(const QModelIndex &index, int role) const
     Room *pRoom = m_vRooms[index.row()];
 
     // Return value for role
-    if (role == RoomName)
-        return pRoom->name();
+    if (role == RoomObject)
+        return qVariantFromValue(pRoom);
 
     return QVariant();
 }
@@ -80,7 +83,8 @@ QObject *RoomManager::currentRoom() const
 {
     if ((m_iCurrentRoomIndex >= 0) && (m_iCurrentRoomIndex < count()))
     {
-        return m_vRooms[m_iCurrentRoomIndex];
+        Room *pCurrentRoom = m_vRooms[m_iCurrentRoomIndex];
+        return pCurrentRoom;
     }
     return NULL;
 }
@@ -94,7 +98,6 @@ void RoomManager::addRoom()
     pRoom->setName(sRoomName);
     m_vRooms << pRoom;
     endInsertRows();
-    m_iCurrentRoomIndex = rowCount()-1;
 }
 
 // Remove current room

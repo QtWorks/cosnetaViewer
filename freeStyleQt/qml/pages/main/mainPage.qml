@@ -10,25 +10,12 @@ import "../.."
 
 PageBase {
     id: root
-    headerVisible: true
+    headerVisible: false
     footerVisible: true
-
-    // Main toolbar
-    headerContents: MainToolBar {
-        id: mainToolBar
-        anchors.right: parent.right
-        anchors.top: parent.top
-        onHideSubMenu: menuDisplay.state = ""
-        onToggleMenuDisplayState: {
-            if (menuDisplay.state === "")
-                menuDisplay.state = "on"
-            else
-                menuDisplay.state = ""
-        }
-    }
 
     // Page contents
     pageContents: RoomPageMgr {
+        id: roomPageMgr
         anchors.fill: parent
     }
 
@@ -45,9 +32,10 @@ PageBase {
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 source: "qrc:/icons/previous_page.svg"
+                visible: controller.roomManager.currentRoomIndex > 0
                 onButtonClicked: {
                     controller.roomManager.currentRoomIndex--
-                    console.log("ICI: ", controller.roomManager.currentRoomIndex)
+                    roomPageMgr.positionViewAtIndex(controller.roomManager.currentRoomIndex)
                 }
             }
         }
@@ -83,9 +71,10 @@ PageBase {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 source: "qrc:/icons/next_page.svg"
+                visible: controller.roomManager.currentRoomIndex < (controller.roomManager.count-1)
                 onButtonClicked: {
                     controller.roomManager.currentRoomIndex++
-                    console.log("ICI: ", controller.roomManager.currentRoomIndex)
+                    roomPageMgr.positionViewAtIndex(controller.roomManager.currentRoomIndex)
                 }
             }
         }

@@ -112,7 +112,6 @@
         <file>qml/toolbar/icons/undo_all.svg</file>
         <file>qml/toolbar/icons/view_mode.svg</file>
         <file>qml/toolbar/json/toolbars.json</file>
-        <file>qml/toolbar/qml/CustomToolBar.qml</file>
         <file>qml/toolbar/qml/LeftWing.qml</file>
         <file>qml/toolbar/qml/MainToolBar.qml</file>
         <file>qml/toolbar/qml/MenuDisplay.qml</file>
@@ -140,5 +139,6 @@
         <file>qml/generic/StandardTextField.qml</file>
         <file>qml/toolbar/qml/ToolBarButton.qml</file>
         <file>qml/toolbar/qml/ToolBarRadioButton.qml</file>
+        <file>qml/toolbar/qml/CustomToolBar.qml</file>
     </qresource>
 </RCC>

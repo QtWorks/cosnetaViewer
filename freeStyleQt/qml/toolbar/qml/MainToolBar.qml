@@ -27,17 +27,18 @@ Item {
 
     // Set current mode
     function setCurrentMode(modeId) {
-        controller.roomManager.currentRoom.currentMode = modeId
+        roomObject.currentMode = modeId
         rightWing.setCurrentMode(modeId)
     }
 
     // Left wing
     LeftWing {
         id: leftWing
-        anchors.fill: parent
+        model: gToolBarSettings.modes
+        x: rightWing.x
         onToolBarItemClicked: {
-            console.log("SETTING MODE TO ", modeId)
-            root.setCurrentMode(modeId)
+            console.log("SETTING MODE TO ", itemData.modeId)
+            root.setCurrentMode(itemData.modeId)
         }
     }
 

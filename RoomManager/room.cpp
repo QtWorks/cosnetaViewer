@@ -3,10 +3,13 @@
 
 // Application
 #include "room.h"
+#include "modetoolbar.h"
+#include "actiontoolbar.h"
 
 // Constructor
 Room::Room(QObject *parent) : QObject(parent),
-    m_sName(""), m_eCurrentMode(ViewMode), m_eCurrentDrawingMode(FreeHand)
+    m_sName(""), m_eCurrentMode(ViewMode),
+    m_eCurrentDrawingMode(FreeHand)
 {
     // Register type
     qmlRegisterType<Room>("Components", 1, 0, "Room");
@@ -40,7 +43,7 @@ int Room::currentMode() const
 // Set current mode
 void Room::setCurrentMode(int iCurrentMode)
 {
-    m_eCurrentMode = (AppMode)iCurrentMode;
+    m_eCurrentMode = (Mode)iCurrentMode;
     emit currentModeChanged();
 }
 
@@ -56,4 +59,3 @@ void Room::setCurrentDrawingMode(int iCurrentDrawingMode)
     m_eCurrentDrawingMode = (DrawingMode)iCurrentDrawingMode;
     emit currentDrawingModeChanged();
 }
-

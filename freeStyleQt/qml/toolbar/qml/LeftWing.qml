@@ -3,27 +3,38 @@ import "../.."
 
 Item {
     id: root
-    anchors.fill: parent
-    property alias state: leftWing.state
-    clip: true
-    signal toolBarItemClicked(int modeId)
-    CustomToolBar {
-        id: leftWing
-        model: gToolBarSettings.modes
-        x: rightWing.x
-        Behavior on x {
-            NumberAnimation {duration: Theme.leftWingAnimationDuration; easing.type: Easing.OutElastic}
+    width: model.length*Theme.toolbarItemSize+(model.length-1)*Theme.toolbarItemSpacing
+    height: Theme.toolbarItemSize
+    anchors.verticalCenter: parent.verticalCenter
+    property alias model: listView.model
+    signal toolBarItemClicked(variant itemData)
+
+    // Main list view
+    ListView {
+        id: listView
+        anchors.fill: parent
+        orientation: Qt.Horizontal
+        spacing: Theme.toolbarItemSpacing
+        interactive: false
+        clip: true
+        delegate: ToolBarRadioButtonDelegate {
+            itemData: modelData
+            onToolBarItemClicked: root.toolBarItemClicked(itemData)
+            state: itemData.modeId === controller.roomManager.currentRoom.currentMode ? "active" : ""
         }
-        onToolBarItemClicked: {
-            if (itemData.modeId !== controller.roomManager.currentRoom.currentMode)
-                root.toolBarItemClicked(itemData.modeId)
-        }
-        states: State {
-            name: "opened"
-            PropertyChanges {
-                target: leftWing
-                x: rightWing.x-leftWing.width
-            }
+    }
+
+    // Define behavior on x
+    Behavior on x {
+        NumberAnimation {duration: Theme.leftWingAnimationDuration; easing.type: Easing.OutElastic}
+    }
+
+    // Define states
+    states: State {
+        name: "opened"
+        PropertyChanges {
+            target: leftWing
+            x: rightWing.x-leftWing.width
         }
     }
 }

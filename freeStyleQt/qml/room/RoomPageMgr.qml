@@ -5,6 +5,11 @@ import "../generic"
 Item {
     id: root
 
+    // Position view at index
+    function positionViewAtIndex(index) {
+        roomListView.positionViewAtIndex(index, ListView.SnapPosition)
+    }
+
     // Delegate model
     DelegateModel {
         id: visualModel
@@ -18,17 +23,19 @@ Item {
                 anchors.centerIn: parent
                 color: "red"
                 font.pixelSize: 48
-                text: roomName
+                text: roomObject.name
             }
         }
     }
 
     // Main list view
     ListView {
+        id: roomListView
         anchors.fill: parent
         orientation: Qt.Horizontal
         interactive: false
         model: visualModel
-        currentIndex: controller.roomManager.currentRoomIndex
+        snapMode: ListView.SnapOneItem
+        highlightRangeMode: ListView.StrictlyEnforceRange
     }
 }

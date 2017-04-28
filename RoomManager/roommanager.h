@@ -19,7 +19,7 @@ class ROOMMANAGERSHARED_EXPORT RoomManager : public QAbstractListModel, public I
     Q_PROPERTY(QObject *currentRoom READ currentRoom NOTIFY currentRoomIndexChanged)
 
 public:
-    enum Roles {RoomName=Qt::UserRole+1};
+    enum Roles {RoomObject=Qt::UserRole+1};
 
     // Constructor
     RoomManager(QObject *parent=NULL);
